@@ -1,0 +1,113 @@
+/* 파도/사진 움직임 — 전역 purge와 무관하게 번들됨 */
+@keyframes oceanPhotoDrift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1.08);
+  }
+  20% {
+    transform: translate3d(3.5%, -1.2%, 0) scale(1.1);
+  }
+  45% {
+    transform: translate3d(-2.5%, 1.5%, 0) scale(1.12);
+  }
+  70% {
+    transform: translate3d(2%, 2%, 0) scale(1.09);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.08);
+  }
+}
+
+@keyframes waveGlintMove {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.38;
+  }
+  50% {
+    background-position: 100% 40%;
+    opacity: 0.55;
+  }
+  100% {
+    background-position: 200% 50%;
+    opacity: 0.38;
+  }
+}
+
+@keyframes oceanShimmer {
+  0% {
+    opacity: 0.14;
+    transform: translateX(-5%) translateY(0);
+  }
+  50% {
+    opacity: 0.24;
+    transform: translateX(5%) translateY(-3px);
+  }
+  100% {
+    opacity: 0.14;
+    transform: translateX(-5%) translateY(0);
+  }
+}
+
+.photoDrift {
+  will-change: transform;
+  animation: oceanPhotoDrift 28s ease-in-out infinite;
+}
+
+.waveGlint {
+  background: repeating-linear-gradient(
+    92deg,
+    transparent 0px,
+    transparent 44px,
+    rgba(255, 255, 255, 0.055) 48px,
+    transparent 92px,
+    transparent 132px,
+    rgba(220, 235, 255, 0.08) 136px,
+    transparent 180px
+  );
+  background-size: 300% 100%;
+  mix-blend-mode: soft-light;
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 78%);
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    transparent 78%
+  );
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  pointer-events: none;
+  animation: waveGlintMove 18s linear infinite;
+}
+
+.shimmerOverlay {
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(200, 220, 255, 0.16) 22%,
+    rgba(255, 255, 255, 0.11) 48%,
+    rgba(180, 200, 230, 0.14) 74%,
+    transparent 100%
+  );
+  background-size: 220% 100%;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  animation: oceanShimmer 22s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photoDrift,
+  .waveGlint,
+  .shimmerOverlay {
+    animation: none;
+  }
+
+  .photoDrift {
+    transform: translate3d(0, 0, 0) scale(1.08);
+  }
+
+  .waveGlint {
+    opacity: 0.28;
+  }
+
+  .shimmerOverlay {
+    opacity: 0.1;
+  }
+}
