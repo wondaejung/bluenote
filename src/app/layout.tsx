@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Noto_Sans_KR, Noto_Serif_KR } from "next/font/google"
+import { Great_Vibes, Noto_Sans_KR, Noto_Serif_KR } from "next/font/google"
 import "./globals.css"
 
 const notoSans = Noto_Sans_KR({
@@ -12,6 +12,12 @@ const notoSerif = Noto_Serif_KR({
   variable: "--font-noto-serif",
   subsets: ["latin"],
   weight: ["400", "600"],
+})
+
+const greatVibes = Great_Vibes({
+  variable: "--font-script",
+  subsets: ["latin"],
+  weight: "400",
 })
 
 export const metadata: Metadata = {
@@ -27,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="ko"
-      className={`${notoSans.variable} ${notoSerif.variable} h-full antialiased`}
+      className={`${notoSans.variable} ${notoSerif.variable} ${greatVibes.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-[#050a12] text-[#e8eef5]">{children}</body>
     </html>
