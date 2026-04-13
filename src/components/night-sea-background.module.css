@@ -47,9 +47,10 @@
   }
 }
 
-.photoDrift {
+.gifBase {
+  transform: translateZ(0) scale(1.01);
   will-change: transform;
-  animation: oceanPhotoDrift 28s ease-in-out infinite;
+  backface-visibility: hidden;
 }
 
 .waveGlint {
@@ -93,14 +94,14 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .photoDrift,
+  .gifBase,
   .waveGlint,
   .shimmerOverlay {
     animation: none;
   }
 
-  .photoDrift {
-    transform: translate3d(0, 0, 0) scale(1.08);
+  .gifBase {
+    transform: translateZ(0) scale(1.01);
   }
 
   .waveGlint {
