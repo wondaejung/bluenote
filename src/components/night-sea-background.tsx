@@ -1,4 +1,3 @@
-import Image from "next/image"
 import styles from "./night-sea-background.module.css"
 
 export const NightSeaBackground = () => {
@@ -12,14 +11,13 @@ export const NightSeaBackground = () => {
         <div className="absolute left-1/2 top-1/2 h-[118vh] w-[118vw] -translate-x-1/2 -translate-y-1/2">
           {/* 안쪽: 파도 드리프트만 적용 */}
           <div className={`${styles.photoDrift} absolute inset-[-8%] min-h-[116%] min-w-[116%]`}>
-            <Image
-              src="/night-ocean-hero.png"
+            <img
+              src="/night-ocean-wave.png"
               alt=""
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover object-[center_58%]"
-              quality={100}
+              className="absolute inset-0 h-full w-full object-cover object-[center_58%]"
+              draggable={false}
+              loading="eager"
+              aria-hidden
             />
           </div>
         </div>
