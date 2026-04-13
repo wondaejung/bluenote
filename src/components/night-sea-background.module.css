@@ -1,19 +1,19 @@
 /* 파도/사진 움직임 — 전역 purge와 무관하게 번들됨 */
 @keyframes oceanPhotoDrift {
   0% {
-    transform: translate3d(0, 0, 0) scale(1.08);
+    transform: translate3d(0, 0, 0) scale(1.06);
   }
-  20% {
-    transform: translate3d(3.5%, -1.2%, 0) scale(1.1);
+  25% {
+    transform: translate3d(2.8%, -1.4%, 0) scale(1.08);
   }
-  45% {
-    transform: translate3d(-2.5%, 1.5%, 0) scale(1.12);
+  50% {
+    transform: translate3d(-2.2%, 1.8%, 0) scale(1.09);
   }
-  70% {
-    transform: translate3d(2%, 2%, 0) scale(1.09);
+  75% {
+    transform: translate3d(1.6%, 2.2%, 0) scale(1.07);
   }
   100% {
-    transform: translate3d(0, 0, 0) scale(1.08);
+    transform: translate3d(0, 0, 0) scale(1.06);
   }
 }
 
@@ -74,7 +74,7 @@
   mask-size: 100% 100%;
   -webkit-mask-size: 100% 100%;
   pointer-events: none;
-  animation: waveGlintMove 18s linear infinite;
+  animation: waveGlintMove 28s linear infinite;
 }
 
 .shimmerOverlay {

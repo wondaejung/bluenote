@@ -76,6 +76,38 @@ body {
   }
 }
 
+@keyframes moon-wave-sync {
+  0%,
+  100% {
+    text-shadow:
+      0 0 9px rgba(255, 255, 255, 0.36),
+      0 0 22px rgba(198, 222, 252, 0.42),
+      0 0 44px rgba(126, 165, 222, 0.2);
+    filter: brightness(1);
+  }
+  25% {
+    text-shadow:
+      0 0 12px rgba(255, 255, 255, 0.52),
+      0 0 28px rgba(220, 236, 255, 0.5),
+      0 0 56px rgba(150, 186, 238, 0.3);
+    filter: brightness(1.08);
+  }
+  50% {
+    text-shadow:
+      0 0 15px rgba(255, 255, 255, 0.62),
+      0 0 34px rgba(230, 242, 255, 0.6),
+      0 0 64px rgba(168, 198, 246, 0.35);
+    filter: brightness(1.14);
+  }
+  75% {
+    text-shadow:
+      0 0 11px rgba(255, 255, 255, 0.46),
+      0 0 25px rgba(210, 230, 255, 0.48),
+      0 0 50px rgba(138, 178, 234, 0.26);
+    filter: brightness(1.06);
+  }
+}
+
 @keyframes moon-glow-pulse {
   0%,
   100% {
@@ -125,12 +157,13 @@ body {
 
 @media (prefers-reduced-motion: no-preference) {
   .moonlight-yunseul {
-    animation: yunseul-shift 16s linear infinite,
-      yunseul-sparkle 4.2s ease-in-out infinite;
+    animation: yunseul-shift 28s linear infinite,
+      yunseul-sparkle 4.2s ease-in-out infinite,
+      moon-wave-sync 28s ease-in-out infinite;
   }
 
   .moonlight-yunseul-delay {
-    animation-delay: 0.7s, 0.9s;
+    animation-delay: 0.7s, 0.9s, 0.9s;
   }
 }
 

@@ -18,11 +18,19 @@ export const NightSeaBackground = () => {
               fill
               priority
               sizes="100vw"
-              className="object-cover object-[center_56%]"
-              quality={92}
+              className="object-cover object-[center_58%]"
+              quality={100}
             />
           </div>
         </div>
+      </div>
+
+      <div
+        className="pointer-events-none absolute right-[10%] top-[10%] h-24 w-24 md:h-28 md:w-28"
+        aria-hidden
+      >
+        <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(252,247,232,0.98)_0%,rgba(232,239,250,0.94)_44%,rgba(182,199,224,0.72)_72%,rgba(140,160,190,0)_100%)] shadow-[0_0_38px_rgba(214,228,248,0.62)]" />
+        <div className="absolute left-[40%] top-[6%] h-[88%] w-[88%] rounded-full bg-[#03060f]" />
       </div>
 
       <div
@@ -37,9 +45,7 @@ export const NightSeaBackground = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_65%_at_center,rgba(0,0,0,0)_0%,rgba(0,0,0,0.35)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 h-[42%] bg-gradient-to-t from-[#010306] via-[#020408]/90 to-transparent" />
 
-      <div
-        className={`${styles.waveGlint} absolute inset-x-0 bottom-0 h-[58%]`}
-      />
+      <div className={`${styles.waveGlint} absolute inset-x-0 bottom-0 h-[58%]`} />
       <div className={`${styles.shimmerOverlay} absolute inset-0 opacity-[0.2]`} />
     </div>
   )
